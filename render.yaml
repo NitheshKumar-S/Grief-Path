@@ -2,7 +2,6 @@ services:
   - type: web
     name: griefpath-api
     runtime: python
-    pythonVersion: 3.11.9
 
     buildCommand: pip install -r backend/requirements.txt
 
@@ -11,15 +10,21 @@ services:
     envVars:
       - key: SUPABASE_URL
         sync: false
+
       - key: SUPABASE_KEY
         sync: false
+
       - key: ANTHROPIC_API_KEY
         sync: false
+
       - key: PINECONE_API_KEY
         sync: false
+
       - key: PINECONE_INDEX
         value: griefpath-memory
+
       - key: JWT_SECRET
         generateValue: true
+
       - key: ENCRYPTION_KEY
         generateValue: true
